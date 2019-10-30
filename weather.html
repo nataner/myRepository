@@ -1,0 +1,28 @@
+	<html>
+	<head>
+		<link rel="stylesheet" href="weather.css">
+		<script type='text/javascript' src='config.js'></script>
+		<script src="weather.js"></script>
+	</head>
+	<body onload="getWeather()">
+
+	<div id = "loader"></div>
+	<div class = "container" id = "container">
+			<h2 id = "city"> city </h2>
+			<div class = "details">
+				<table id="table">
+					<tr id = "l1">
+						<th id = "temperature"> <span id = "temp"> temperature </span> <span id = "sign"> &#176; c </span> </th>
+						<th id = "icon"> <img id="iconsrc" src="" alt = "icon"> </th>
+					</tr>
+					<tr>
+						<th id = "wind"> S <span id = "speed"> </span> km/h </th>
+						<th id = "description"> description </th>
+					</tr>
+				</table>
+			</div>
+		
+	</div>
+
+	</body>
+	</html>

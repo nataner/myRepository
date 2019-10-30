@@ -4,8 +4,13 @@
 		<script type='text/javascript' src='config.js'></script>
 		<script src="weather.js"></script>
 	</head>
-	<body onload="getWeather()">
-
+	<body>
+	
+	<div id = "form">
+		API: <br>
+		<input type="text" id="mySubmit" value="">
+		<button onclick="API_submit()">submit</button>
+	</div>
 	<div id = "loader"></div>
 	<div class = "container" id = "container">
 			<h2 id = "city"> city </h2>

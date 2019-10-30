@@ -1,9 +1,23 @@
 
 //this program fetch data from openweathermap.org and shows the weather at Dhaka
+
+var mykey = "";
+
+
+function API_submit() {
+    
+	mykey = document.getElementById("mySubmit").value;
+	document.getElementById("form").style.visibility = "hidden";
+	getWeather();
+	
+}
+
 function getWeather(){
 	
+	document.getElementById("loader").style.visibility = "visible";
+	
 	const city_name = "dhaka";
-	var mykey = config.api_key; //api key is stored at the config file for protection
+	var API = mykey;
 	
 	const URL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&APPID=" + mykey;
 	
@@ -22,6 +36,11 @@ function getWeather(){
 	//after fetching the data render it on the widget
 	function renderData(data)
 	{
+		if(data.cod == 401)
+		{
+			alert("invalid API key");
+		}
+		
 		document.getElementById("city").innerHTML = data.name;
 		document.getElementById("temp").innerHTML = celciusConvert(data.main.temp);
 		
